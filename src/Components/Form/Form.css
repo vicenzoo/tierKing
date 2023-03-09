@@ -1,0 +1,17 @@
+.form{
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+}
+
+.form .title{
+    text-align: center;
+}
+
+.form form {
+    max-width: 100%;
+    background-color:  #f2f2f2;
+    border-radius: 20px;
+    padding: 56px 104px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
+}
