@@ -3,20 +3,14 @@ import './Tier.css'
 
 const Tier = (props) => {
 
-    const backCol = { 
-        backgroundColor: props.secondcolor 
-    }
-    const borderCol = {
-        borderColor: props.primarycolor
-    }
 
     return (
 
-       props.itemT.length > 0 && <section className='tier' style={backCol}>
+       props.itemT.length > 0 && <section className='tier' style={{backgroundImage: 'url(/images/Back.png)',backgroundColor: props.secondcolor}}>
 
-        <h3 style={borderCol}> {props.name} </h3>
+        <h3 style={{ borderColor: props.thirdcolor, color: props.thirdcolor,borderBottomColor: props.thirdcolor }}> {props.name} </h3>
         <div className='itemTier'>
-            {props.itemT.map(ItemTi => <ItemTier key={ItemTi.name} BackgroundCol={props.primarycolor} name={ItemTi.name} Descr={ItemTi.Descr} img={ItemTi.image}/>)}
+            {props.itemT.map(ItemTi => <ItemTier key={ItemTi.name} BackgroundCol={props.thirdcolor} BackgroundColAlt = {props.secondcolor} name={ItemTi.name} Descr={ItemTi.Descr} img={ItemTi.image}/>)}
         </div>
 
         </section>

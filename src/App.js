@@ -11,31 +11,37 @@ function App() {
       name: '(S) Super',
       firstcolor: '#ffd80d',
       secondcolor: '#ffeb80',
+      thirdcolor: '#FF7B54',
     },
     {
       name: '(A) Amável',
       firstcolor: '#d50000',
-      secondcolor: '#ff4d4d',
+      secondcolor: '#be1c4a',
+      thirdcolor: '#ff8a7a',
     },
     {
       name: '(B) Beleza',
       firstcolor: '#445119',
       secondcolor: '#a8c545',
+      thirdcolor: '#61764B',
     },
     {
       name: '(C) Coisa Boa',
       firstcolor: '#d41cff',
       secondcolor: '#e782ff',
+      thirdcolor: '#ff3934',
     },
     {
       name: '(D) Doí :(',
       firstcolor: '#0D6986',
       secondcolor: '#acf0f2',
+      thirdcolor: '#00425A',
     },
     {
       name: '(F) Fracasso',
       firstcolor: '#63541c',
       secondcolor: '#b39732',
+      thirdcolor: '#735F32',
     }
   ]
 
@@ -65,7 +71,7 @@ function App() {
       tier: tiers[0].name
     },
     {
-      name: 'PARECE AQUELE MALUKO DO BIGBROTHER',
+      name: 'AQUELE LOKO DO BIGBROTHER',
       Descr: 'Mas não é :P',
       image: 'http://warnerbr.s3-website-sa-east-1.amazonaws.com/warner2021/images/JASON%20DERULO.png',
       tier: tiers[1].name
@@ -101,13 +107,13 @@ function App() {
       tier: tiers[2].name
     },
     {
-      name: 'NÃO CONFUNDIR COM A EQUIPE DE F1 OU COM O ATOR',
+      name: 'NÃO É A EQUIPE DE F1 OU O ATOR',
       Descr: 'Todo Dia uma formação de Banda Diferente',
       image: 'http://warnerbr.s3-website-sa-east-1.amazonaws.com/warner2021/images/HAYLEY%20WILLIAMS.png',
       tier: tiers[2].name
     },
     {
-      name: 'Marina Silva',
+      name: 'MARINA SILVA',
       Descr: 'Hipster e Tartaruga nas Horas Vagas',
       image: 'https://pbs.twimg.com/profile_images/1577255224741400576/_1Vi_i-g_400x400.jpg',
       tier: tiers[2].name
@@ -126,9 +132,9 @@ function App() {
     <div>
       <Banner />
       <Form tiers={tiers.map(tier => tier.name)} onCreateNew={Tm => onNewTier(Tm)} />
-      <h1 className="titulo">Trupe Bacana</h1>
+      <h1 className="title">Trupe Bacana</h1>
       {tiers.map(tier => <Tier key={tier.name} name={tier.name} primarycolor={tier.firstcolor}
-        secondcolor={tier.secondcolor} itemT={itemtiers.filter(itemtier => itemtier.tier === tier.name)} />)}
+        secondcolor={tier.secondcolor} thirdcolor={tier.thirdcolor} itemT={itemtiers.filter(itemtier => itemtier.tier === tier.name)} />)}
 
     </div>
   );

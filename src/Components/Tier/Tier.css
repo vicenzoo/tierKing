@@ -1,5 +1,8 @@
 .tier {
     padding: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    border:2px dotted #000000;
 }
 
 .tier h3{
