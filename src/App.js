@@ -46,7 +46,6 @@ function App() {
     setTier([...itemtiers, itemtier])
   }
 
-
   return (
     <div>
       <Banner />
