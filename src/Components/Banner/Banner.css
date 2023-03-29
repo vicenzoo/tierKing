@@ -1,5 +1,5 @@
 .headers {
-    background-color: #ff0000;
+    background-color: #adc71b;
     padding: 5px;
     display: inline-block;
     border-radius: 5px;
@@ -9,5 +9,5 @@
     left:5px; 
     top:5px;
     overflow:hidden;
-    border:2px dotted #000000;
+    border:3px double #ffffff;
 }

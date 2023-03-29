@@ -8,37 +8,37 @@ function App() {
   
   const tiers = [
     {
-      name: '(S) Super',
+      name: 'King',
       firstcolor: '#ffd80d',
-      secondcolor: '#ffeb80',
+      secondcolor: '#fcfc3d',
       thirdcolor: '#FF7B54',
     },
     {
-      name: '(A) Amável',
+      name: 'Amável',
       firstcolor: '#d50000',
       secondcolor: '#be1c4a',
       thirdcolor: '#ff8a7a',
     },
     {
-      name: '(B) Beleza',
+      name: 'Beleza',
       firstcolor: '#445119',
       secondcolor: '#a8c545',
       thirdcolor: '#61764B',
     },
     {
-      name: '(C) Coisa Boa',
+      name: 'Coisa Boa',
       firstcolor: '#d41cff',
       secondcolor: '#e782ff',
       thirdcolor: '#ff3934',
     },
     {
-      name: '(D) Doí :(',
+      name: 'Doí :(',
       firstcolor: '#0D6986',
       secondcolor: '#acf0f2',
       thirdcolor: '#00425A',
     },
     {
-      name: '(F) Fracasso',
+      name: 'Fracasso',
       firstcolor: '#63541c',
       secondcolor: '#b39732',
       thirdcolor: '#735F32',
@@ -127,14 +127,25 @@ function App() {
     setTier([...itemtiers, itemtier])
   }
 
+  function delitemTier(){
+
+  }
 
   return (
     <div>
       <Banner />
       <Form tiers={tiers.map(tier => tier.name)} onCreateNew={Tm => onNewTier(Tm)} />
       <h1 className="title">Trupe Bacana</h1>
-      {tiers.map(tier => <Tier key={tier.name} name={tier.name} primarycolor={tier.firstcolor}
-        secondcolor={tier.secondcolor} thirdcolor={tier.thirdcolor} itemT={itemtiers.filter(itemtier => itemtier.tier === tier.name)} />)}
+      {tiers.map(tier =>
+        <Tier key={tier.name} 
+        name={tier.name} 
+        primarycolor={tier.firstcolor}
+        secondcolor={tier.secondcolor}
+        thirdcolor={tier.thirdcolor} 
+        itemT={itemtiers.filter(itemtier => itemtier.tier === tier.name)} 
+        onDel={delitemTier()}
+        />
+        )}
 
     </div>
   );
