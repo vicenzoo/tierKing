@@ -8,7 +8,7 @@ const ItemTier = (props) => {
         <div className='header' style={{backgroundColor: props.BackgroundCol}}>
             <img src={props.img} alt={props.name} />
         </div>
-        <div className='footer' style={{color: props.BackgroundCol}}>
+        <div className='footer' style={{color: props.ColorText}}>
         <h4> {props.name} </h4>
         <h5> {props.Descr} </h5>
         </div>

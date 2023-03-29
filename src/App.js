@@ -6,44 +6,38 @@ import './index.css'
 
 function App() {
   
-  const tiers = [
+  const [tiers,setTiers] = useState([
     {
       name: 'King',
-      firstcolor: '#ffd80d',
-      secondcolor: '#fcfc3d',
-      thirdcolor: '#FF7B54',
+      text: '#FFFF66',
+      cor: '#FFFFA9',
     },
     {
       name: 'Amável',
-      firstcolor: '#d50000',
-      secondcolor: '#be1c4a',
-      thirdcolor: '#ff8a7a',
+      text: '#FF6666',
+      cor: '#FFA8C1',
     },
     {
       name: 'Beleza',
-      firstcolor: '#445119',
-      secondcolor: '#a8c545',
-      thirdcolor: '#61764B',
+      text: '#DBFF66',
+      cor: '#C9FF1A',
     },
     {
       name: 'Coisa Boa',
-      firstcolor: '#d41cff',
-      secondcolor: '#e782ff',
-      thirdcolor: '#ff3934',
+      text: '#FFFF66',
+      cor: '#e782ff',
     },
     {
       name: 'Doí :(',
-      firstcolor: '#0D6986',
-      secondcolor: '#acf0f2',
-      thirdcolor: '#00425A',
+      text: '#427F83',
+      cor: '#acf0f2',
     },
     {
       name: 'Fracasso',
-      firstcolor: '#63541c',
-      secondcolor: '#b39732',
-      thirdcolor: '#735F32',
-    }
-  ]
+      text: '#b39732',
+      cor: '#b39732',
+    },
+  ]);
 
   const inicial = [
     {
@@ -131,17 +125,27 @@ function App() {
 
   }
 
+  function changeColor(color,name){
+    setTiers(tiers.map(tier => {
+      if(tier.name === name){
+        tier.cor =color;
+      }
+      return tier;
+    }));
+  }
+
   return (
     <div>
       <Banner />
       <Form tiers={tiers.map(tier => tier.name)} onCreateNew={Tm => onNewTier(Tm)} />
       <h1 className="title">Trupe Bacana</h1>
       {tiers.map(tier =>
-        <Tier key={tier.name} 
+        <Tier 
+        changeColor={changeColor}
+        key={tier.name} 
         name={tier.name} 
-        primarycolor={tier.firstcolor}
-        secondcolor={tier.secondcolor}
-        thirdcolor={tier.thirdcolor} 
+        cor={tier.cor}
+        text={tier.text}
         itemT={itemtiers.filter(itemtier => itemtier.tier === tier.name)} 
         onDel={delitemTier()}
         />
