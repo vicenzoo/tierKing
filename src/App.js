@@ -140,8 +140,9 @@ function App() {
     setTier([...itemtiers, itemtier])
   }
 
-  function delitemTier(){
-
+  function delitemTier(id){
+    console.log(id);
+    setTier(itemtiers.filter(itemtier => itemtier.id !== id));
   }
 
   function changeColor(color,id){
@@ -167,7 +168,7 @@ function App() {
         cor={tier.cor}
         text={tier.text}
         itemT={itemtiers.filter(itemtier => itemtier.tier === tier.name)} 
-        onDel={delitemTier()}
+        onDel={delitemTier}
         />
         )}
 

@@ -1,10 +1,18 @@
 import { AiFillCloseCircle } from 'react-icons/ai'
 import './ItemTier.css'
 
-const ItemTier = (props) => {
+const ItemTier = (props,onDel,id) => {
+
+    function deleteTier(){
+        onDel(id.id)
+    }
 
     return (<div className='iTier'>
-        <AiFillCloseCircle size={25} className='delete' onClick={props.onDel}/>
+        <AiFillCloseCircle 
+            size={25} 
+            className='delete' 
+            onClick={deleteTier}
+        />
         <div className='header' style={{backgroundColor: props.BackgroundCol}}>
             <img src={props.img} alt={props.name} />
         </div>

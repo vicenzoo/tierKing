@@ -2,7 +2,7 @@ import ItemTier from '../itemTier'
 import './Tier.css'
 import hexToRgba from 'hex-to-rgba'
 
-const Tier = (props) => {
+const Tier = (props,onDel) => {
 
 
     return (
@@ -11,7 +11,7 @@ const Tier = (props) => {
         <h3 style={{ borderColor: props.cor,color: props.text }}> {props.name} </h3>
         <div className='itemTier'>
             {props.itemT.map(ItemTi => {
-                return <ItemTier key={ItemTi.name} BackgroundCol={props.cor} ColorText = {props.text} name={ItemTi.name} Descr={ItemTi.Descr} img={ItemTi.image} onDel={props.onDel}/>
+                return <ItemTier key={ItemTi.name} BackgroundCol={props.cor} ColorText = {props.text} name={ItemTi.name} Descr={ItemTi.Descr} img={ItemTi.image} onDel={onDel}/>
             })}
         </div>
         </section>
